@@ -7,6 +7,7 @@ import MyEquipmentList from "./Pages/myEquipmentList";
 import AddEquipment from "./Pages/addEquipment";
 import AllSportsEquipment from "./Pages/allSportsEquipment";
 import DetailsPage from "./Pages/DetailsPage";
+import UpdateData from "./Pages/UpdateData";
 
 
  const  router=createBrowserRouter([
@@ -40,6 +41,11 @@ import DetailsPage from "./Pages/DetailsPage";
                 element:<DetailsPage></DetailsPage>,
                 loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
                 
+            },{
+                path:'/update/:id',
+                element:<UpdateData></UpdateData>,
+                loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
+
             }
         ]
 
