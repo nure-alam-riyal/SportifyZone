@@ -6,18 +6,19 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
   const {user, LogOut}=useContext(AuthContext)
     const links=<>
-  <li><NavLink to="/"                className=''>Home</NavLink></li>
-  <li><NavLink to="/allsports" className=''>All Sports Equipment</NavLink></li>
-  <li><NavLink to="/addequipment"    className=''>Add Sports Equipment</NavLink></li>
-  <li><NavLink to="/myequipmentlist"       className=''>My Equipment LIst</NavLink></li>
+  <li><NavLink to="/"                className='text-lg font-medium'>Home</NavLink></li>
+  <li><NavLink to="/allsports"       className='text-lg font-medium'>All Sports Equipment</NavLink></li>
+  <li><NavLink to="/addequipment"    className='text-lg font-medium'>Add Sports Equipment</NavLink></li>
+  <li><NavLink to="/myequipmentlist" className='text-lg font-medium'>My Equipment List</NavLink></li>
     </>
    
     
     return (
-        <div className="navbar bg-base-100">
-  <div className="navbar-start">
+        <div className="bg-orange-50 ">
+  <div className="navbar w-11/12 mx-auto gap-2 ">
+  <div className="navbar-start ">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -37,12 +38,12 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-  <div className="flex gap-3 items-center">
-    <div><img className="w-20 h-20 rounded-full" src={logo} alt="logo"/></div>
-  <div className="  text-xl">SportifyZone</div>
+  <div className="flex gap-1 items-center">
+    <div><img className="w-16 hidden md:flex h-16 rounded-full" src={logo} alt="logo"/></div>
+  <div className="font-bold text-xl">SportifyZone</div>
   </div>
   </div>
-  <div className="navbar-center hidden md:flex">
+  <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {
         links
@@ -58,6 +59,7 @@ const Navbar = () => {
        <Link to='/register' className="btn">Register</Link>
        </div>
    }
+  </div>
   </div>
 </div>
     );

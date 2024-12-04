@@ -19,7 +19,7 @@ const LogIn = () => {
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
-        <div className="flex flex-col w-2/5 mx-auto ">
+        <div className="flex flex-col w-11/12 md:w-9/12  lg:w-2/5 mx-auto ">
           <div className="text-center ">
             <h1 className="text-5xl font-bold my-4">Login now!</h1>
           </div>
@@ -45,7 +45,7 @@ const LogIn = () => {
               </div>
               
             </form>
-            <div onClick={ SingInWIthgoogle} className="flex justify-center w-1/2 mx-auto bg-slate-50 gap-3 my-3 items-center btn">
+            <div onClick={ SingInWIthgoogle} className="flex justify-center  w-11/12 md:w-2/3 lg:w-1/2 mx-auto bg-slate-50 gap-3 my-3 items-center btn">
              <img className="w-10 h-10 rounded-full" src={google} alt="google" /> <p>Login With Google</p>
             </div>
           </div>

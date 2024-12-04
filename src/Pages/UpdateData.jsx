@@ -1,12 +1,15 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 
 const UpdateData = () => {
-    const [startDate, setStartDate] = useState(new Date().toDateString());
+    const navigate=useNavigate()
     const equipment=useLoaderData()
+    
     const { itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime,_id}=equipment || {}
+    const [startDate, setStartDate] = useState(new Date(dtime).toDateString());
+    // const [date,setDate]=useState(dtime)
     const updateData=(e)=>{
         e.preventDefault()
         const  form=e.target 
@@ -36,13 +39,14 @@ const UpdateData = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            navigate("/myequipmentlist")
         })
         .catch(error=>{
             console.log(error)
         })
     }
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-slate-50 py-10 ">
   <div className="hero-content flex-col ">
     <div className=" text-center">
       <h1 className="text-5xl font-bold">Update  Equipment</h1>
@@ -123,16 +127,16 @@ const UpdateData = () => {
           <label className="label">
             <span className="label-text">Processing Time (delivery time) </span>
           </label>
-          <DatePicker className="border w-full p-3 rounded-lg" defaultValue={dtime} selected={dtime} onChange={(date) => setStartDate(date)} />
+          <DatePicker  className="border w-full p-3 rounded-lg" dateFormat="dd-MM-yyyy"  selected={startDate} onChange={(date) => setStartDate(date)} />
          
         </div>
-        </div>
+        </div>{'dd/mm/yyyy'}
         <div className="lg:flex gap-4">
         <div className="form-control w-full ">
           <label className="label">
             <span className="label-text">Description</span>
           </label>
-         <textarea className="border p-6 rounded-sm" defaultValue={description} placeholder="description..." name="description" id="" cols="5" rows="5"></textarea>
+         <textarea className="border p-6 rounded-sm"  defaultValue={description} placeholder="description..." name="description" id="" cols="5" rows="5"></textarea>
         </div>
         
         </div>

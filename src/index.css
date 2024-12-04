@@ -4,5 +4,6 @@
  .active{
     color: blue !important;
     background-color: white !important;
+    font-weight: bold !important;
     
 }
