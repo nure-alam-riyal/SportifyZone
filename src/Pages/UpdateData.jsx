@@ -6,9 +6,40 @@ import { useLoaderData } from "react-router-dom";
 const UpdateData = () => {
     const [startDate, setStartDate] = useState(new Date().toDateString());
     const equipment=useLoaderData()
-    const { itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipment || {}
-    const updateData=()=>{
+    const { itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime,_id}=equipment || {}
+    const updateData=(e)=>{
+        e.preventDefault()
+        const  form=e.target 
+        const itemName=form.itemName.value;
+        const categoryName=form.categoryName.value;
+        const image=form.image.value;
+        const email=form.email.value;
+        const userName=form.userName.value;
+        const description=form.description.value;
+        const status=form.status.value;
+        const price=form.price.value;
+        const customization=form.customization.value;
+        const rating=form.rating.value;
+        const dtime=startDate;
+        const info={
+         itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime
+        }
+        fetch(`http://localhost:4871/equipments/${_id}`,{
+            method:"PUT",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(info)
 
+
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
