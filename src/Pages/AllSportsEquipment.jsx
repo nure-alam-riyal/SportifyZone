@@ -5,7 +5,7 @@ const AllSportsEquipment = () => {
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     console.log(equipments)
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto w-10/12 mx-auto mb-10">
   <table className="table">
     {/* head */}
     <thead className="bg-blue-300">

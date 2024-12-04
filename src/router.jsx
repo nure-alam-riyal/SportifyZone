@@ -16,7 +16,8 @@ import DetailsPage from "./Pages/DetailsPage";
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:()=>fetch("http://localhost:4871/equipments")
             },{
                 path:'/login',
                 element:<LogIn></LogIn>
