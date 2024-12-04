@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import  { AuthContext } from "../Provider/AuthProvider";
+import google from '../assets/google logo.avif'
 
 const Register = () => {
-  const {createUser,UpdateProfile}=useContext(AuthContext)
+  const {createUser,UpdateProfile,SingInWIthgoogle}=useContext(AuthContext)
     const handleregister=e=>{
         e.preventDefault()
         const email=e.target.email.value 
@@ -65,6 +66,9 @@ const Register = () => {
               </div>
               
             </form>
+            <div onClick={ SingInWIthgoogle} className="flex justify-center w-1/2 mx-auto bg-slate-50 gap-3 my-3 items-center btn">
+             <img className="w-10 h-10 rounded-full" src={google} alt="google" /> <p>Login With Google</p>
+            </div>
           </div>
         </div>
       </div>

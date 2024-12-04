@@ -6,6 +6,7 @@ import Register from "./Pages/Register";
 import MyEquipmentList from "./Pages/myEquipmentList";
 import AddEquipment from "./Pages/addEquipment";
 import AllSportsEquipment from "./Pages/allSportsEquipment";
+import DetailsPage from "./Pages/DetailsPage";
 
 
  const  router=createBrowserRouter([
@@ -31,7 +32,13 @@ import AllSportsEquipment from "./Pages/allSportsEquipment";
                 element:<AddEquipment></AddEquipment>
             },{
                 path:"/allsports",
-                element:<AllSportsEquipment></AllSportsEquipment>
+                element:<AllSportsEquipment></AllSportsEquipment>,
+                loader:()=>fetch("http://localhost:4871/equipments")
+            },{
+                path:"details/:id",
+                element:<DetailsPage></DetailsPage>,
+                loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
+                
             }
         ]
 
