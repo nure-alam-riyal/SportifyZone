@@ -1,9 +1,11 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddEquipment = () => {
+  const {user}=useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date().toDateString());
     const handleData=(e)=>{
         e.preventDefault()
@@ -80,13 +82,13 @@ const AddEquipment = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text"  name="email" value="nariyal1050@gmail.com" className="input input-bordered " readOnly />
+          <input type="text"  name="email" defaultValue={user.email} className="input input-bordered " readOnly />
         </div>
         <div className="form-control w-full lg:w-1/2">
           <label className="label">
             <span className="label-text">User Name</span>
           </label>
-          <input type="text"  name="userName" value="RIYAL" className="input input-bordered" readOnly />
+          <input type="text"  name="userName" defaultValue={user?.displayName} className="input input-bordered" readOnly />
          
         </div>
         </div>

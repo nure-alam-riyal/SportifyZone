@@ -1,16 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../public/logo.jpg';
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, LogOut}=useContext(AuthContext)
     const links=<>
   <li><NavLink to="/"                className=''>Home</NavLink></li>
   <li><NavLink to="/myequipmentlist" className=''>All Sports Equipment</NavLink></li>
   <li><NavLink to="/addequipment"    className=''>Add Sports Equipment</NavLink></li>
   <li><NavLink to="/allsports"       className=''>My Equipment LIst</NavLink></li>
-  
-
     </>
-    console.log(import.meta.env.VITE_apiKey)
+   
+    
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -48,7 +50,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to='/login' className="btn">Log in</Link>
+   {
+    user?<div  className="flex gap-3"><div><img title={user.displayName} className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" /></div  ><Link className="btn bg-red-100" onClick={LogOut}>log Out</Link></div>
+     : 
+    <div className="flex gap-3">
+       <Link to='/login' className="btn">Log in</Link> 
+       <Link to='/register' className="btn">Register</Link>
+       </div>
+   }
   </div>
 </div>
     );
