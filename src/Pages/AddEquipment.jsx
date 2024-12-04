@@ -23,6 +23,15 @@ const AddEquipment = () => {
         itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime
        }
        console.log(info)
+       fetch('http://localhost:4871/equipments',{
+        method:"POST",
+        headers:{
+          'content-type':"application/json"
+        },
+        body:JSON.stringify(info)
+       }).then(res=>res.json()).then(data=>{
+        console.log(data)
+       })
      
     }
     return (

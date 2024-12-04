@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../public/logo.jpg';
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
   
 
     </>
+    console.log(import.meta.env.VITE_apiKey)
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -47,7 +48,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Log in</a>
+    <Link to='/login' className="btn">Log in</Link>
   </div>
 </div>
     );
