@@ -14,10 +14,10 @@ const DetailsPage = () => {
                         className="w-full h-full object-cover rounded-md"
                     />
                 </div>
-                <h2 className="text-xl font-bold text-center text-gray-800 mt-4">
+                <h2 className="text-xl font-bold text-center  text-gray-800 mt-4">
                 <strong>Item Name:</strong> {itemName}
                 </h2>
-                <h2 className="text-xl font-bold text-center text-gray-800 mt-4">
+                <h2 className="text-xl font-bold text-center font-rancho text-gray-800 mt-4">
                 <strong>Category Name :</strong> {categoryName}
                 </h2>
                 <div className="mt-4">

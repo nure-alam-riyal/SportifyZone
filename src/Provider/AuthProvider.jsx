@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 import auth from "../Firebase/Firebase";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 // import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext('')
@@ -29,10 +29,7 @@ const AuthProvider = ({ children }) => {
       return  signInWithPopup(auth, provider)
     }
     const LogOut = () => {
-        signOut(auth).then(() => {
-            toast.success("logout successful")
-
-        })
+       return signOut(auth)
     }
     useEffect(() => {
         const subscribe = onAuthStateChanged(auth, (user) => {

@@ -3,11 +3,11 @@ const Footer = () => {
     return (
         <footer className="footer footer-center text-black bg-slate-200 pt-10 ">
         <aside>
-          <div><img className='w-40 h-40 rounded-full' src={logo} alt="" /></div>
-          <p className="font-bold text-4xl">
+          <div><img className='w-28 h-28 rounded-full' src={logo} alt="" /></div>
+          <p className="font-bold text-4xl font-rancho">
           SportifyZone
             <br />
-           <p className='text-xl font-medium'> Providing reliable service since 2024</p>
+           <p className='text-xl font-railway font-medium'> Providing reliable service since 2024</p>
           </p>
           {/* <p>Copyright © {new Date().getFullYear()} - All right reserved</p> */}
         </aside>

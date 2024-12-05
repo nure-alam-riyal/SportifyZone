@@ -1,9 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from '../../public/logo.jpg';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const navigate=useNavigate()
   const {user, LogOut}=useContext(AuthContext)
     const links=<>
   <li><NavLink to="/"                className='text-lg font-medium'>Home</NavLink></li>
@@ -11,7 +13,13 @@ const Navbar = () => {
   <li><NavLink to="/addequipment"    className='text-lg font-medium'>Add Sports Equipment</NavLink></li>
   <li><NavLink to="/myequipmentlist" className='text-lg font-medium'>My Equipment List</NavLink></li>
     </>
-   
+   const hadleLogout=()=>{
+    LogOut().then(() => {
+      navigate('/')
+      toast.success("logout successful")
+
+  })
+   }
     
     return (
         <div className="bg-orange-50 ">
@@ -40,7 +48,7 @@ const Navbar = () => {
     </div>
   <div className="flex gap-1 items-center">
     <div><img className="w-16 hidden md:flex h-16 rounded-full" src={logo} alt="logo"/></div>
-  <div className="font-bold text-xl">SportifyZone</div>
+  <div className="font-bold font-rancho text-xl">SportifyZone</div>
   </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -50,9 +58,9 @@ const Navbar = () => {
       }
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end ">
    {
-    user?<div  className="flex gap-3"><div><img title={user.displayName} className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" /></div  ><Link className="btn bg-red-100" onClick={LogOut}>log Out</Link></div>
+    user?<div  className="flex gap-3"><div><img title={user.displayName} className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" /></div  ><Link className="btn bg-red-100" onClick={hadleLogout}>log Out</Link></div>
      : 
     <div className="flex gap-3">
        <Link to='/login' className="btn">Log in</Link> 

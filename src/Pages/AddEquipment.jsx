@@ -40,7 +40,7 @@ const AddEquipment = () => {
         <div className="hero bg-base-200 py-10">
   <div className="hero-content flex-col ">
     <div className=" text-center">
-      <h1 className="text-5xl font-bold">Add Equipment</h1>
+      <h1 className="text-5xl font-rancho font-bold">Add Equipment</h1>
       <p className="py-6">
       Incorporating additional sports tools, gear, or apparatus to enhance performance, improve training, or cater to specific athletic needs.
       </p>

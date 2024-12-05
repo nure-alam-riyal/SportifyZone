@@ -6,6 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'railway': ["Raleway","serif"],
+      'rancho': ["Rancho", "serif"],
+      
+    },
     extend: {
       backgroundImage: {
         's1': "url('/src/assets/images (16).jpg')",
