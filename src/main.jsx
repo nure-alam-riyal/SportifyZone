@@ -5,6 +5,7 @@ import './index.css'
 import { RouterProvider,  } from 'react-router-dom'
 import router from './router'
 import AuthProvider from './Provider/AuthProvider'
+import { Toaster } from 'react-hot-toast'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,5 +14,6 @@ createRoot(document.getElementById('root')).render(
 
 </RouterProvider>
     </AuthProvider>
+    <Toaster />
   </StrictMode>,
 )

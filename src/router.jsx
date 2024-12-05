@@ -8,6 +8,7 @@ import AddEquipment from "./Pages/addEquipment";
 import AllSportsEquipment from "./Pages/allSportsEquipment";
 import DetailsPage from "./Pages/DetailsPage";
 import UpdateData from "./Pages/UpdateData";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
  const  router=createBrowserRouter([
@@ -28,22 +29,22 @@ import UpdateData from "./Pages/UpdateData";
                 element:<Register></Register>
             },{
                 path:'/myequipmentlist',
-                element:<MyEquipmentList></MyEquipmentList>
+                element:<PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>,
             },{
                 path:"/addequipment",
-                element:<AddEquipment></AddEquipment>
+                element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
             },{
                 path:"/allsports",
-                element:<AllSportsEquipment></AllSportsEquipment>,
+                element:<PrivateRoute><AllSportsEquipment></AllSportsEquipment></PrivateRoute>,
                 loader:()=>fetch("http://localhost:4871/equipments")
             },{
                 path:"details/:id",
-                element:<DetailsPage></DetailsPage>,
+                element:<PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>,
                 loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
                 
             },{
                 path:'/update/:id',
-                element:<UpdateData></UpdateData>,
+                element:<PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
                 loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
 
             }

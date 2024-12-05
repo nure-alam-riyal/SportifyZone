@@ -8,8 +8,8 @@ const UpdateData = () => {
     const equipment=useLoaderData()
     
     const { itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime,_id}=equipment || {}
-    const [startDate, setStartDate] = useState(new Date(dtime).toDateString());
-    // const [date,setDate]=useState(dtime)
+    const [startDate, setStartDate] = useState(new Date(dtime?dtime:"1-12-2024").toLocaleString());
+    // const [date,setDate]=useState(startDate)
     const updateData=(e)=>{
         e.preventDefault()
         const  form=e.target 
@@ -27,6 +27,8 @@ const UpdateData = () => {
         const info={
          itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime
         }
+        
+   
         fetch(`http://localhost:4871/equipments/${_id}`,{
             method:"PUT",
             headers:{
@@ -37,12 +39,12 @@ const UpdateData = () => {
 
         })
         .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
+        .then(()=>{
+            // console.log(data)
             navigate("/myequipmentlist")
         })
-        .catch(error=>{
-            console.log(error)
+        .catch(()=>{
+            // console.log(error)
         })
     }
     return (

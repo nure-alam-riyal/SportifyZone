@@ -6,7 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const AddEquipment = () => {
   const {user}=useContext(AuthContext)
-    const [startDate, setStartDate] = useState(new Date().toDateString());
+    const [startDate, setStartDate] = useState(new Date().toLocaleDateString());
     const handleData=(e)=>{
         e.preventDefault()
        const  form=e.target 
@@ -20,19 +20,19 @@ const AddEquipment = () => {
        const price=form.price.value;
        const customization=form.customization.value;
        const rating=form.rating.value;
-       const dtime=startDate;
+       const dtime=startDate.toString();
        const info={
         itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime
        }
-       console.log(info)
+      //  console.log(info)
        fetch('http://localhost:4871/equipments',{
         method:"POST",
         headers:{
           'content-type':"application/json"
         },
         body:JSON.stringify(info)
-       }).then(res=>res.json()).then(data=>{
-        console.log(data)
+       }).then(res=>res.json()).then(()=>{
+        // console.log(data)
        })
      
     }

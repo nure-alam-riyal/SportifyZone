@@ -13,7 +13,7 @@ const MyEquipmentList = () => {
     setMyEquipments(data)
    })
     },[user.email])
-    console.log(myEquipments)
+    // console.log(myEquipments)
     const handleDelete=(id)=>{
         Swal.fire({
             title: "Are you sure?",
@@ -29,13 +29,13 @@ const MyEquipmentList = () => {
                     method:"DELETE"
                 })
                 .then(res=>res.json())
-                .then(data=>{
+                .then(()=>{
                            Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success"
               });
-              console.log(data)
+            //   console.log(data)
                 })
            
             }

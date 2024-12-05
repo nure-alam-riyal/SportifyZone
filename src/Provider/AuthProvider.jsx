@@ -2,9 +2,16 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 import auth from "../Firebase/Firebase";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
+// import { useNavigate } from "react-router-dom";
+
 export const AuthContext = createContext('')
 
+
 const AuthProvider = ({ children }) => {
+   
+    // const navigate=useNavigate()
+    const [loading,setLoading]=useState(true)
     const provider = new GoogleAuthProvider();
     const [user, setUser] = useState({})
     const createUser = (email, password) => {
@@ -19,42 +26,31 @@ const AuthProvider = ({ children }) => {
         })
     }
     const SingInWIthgoogle=()=>{
-        signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    // const credential = GoogleAuthProvider.credentialFromResult(result);
-    
-    // The signed-in user info.
-    // const user = result.user;
-    console.log(result.user)
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-  }).catch((error) => {
-   
-console.log(error.message) 
-
-    // ...
-  });
+      return  signInWithPopup(auth, provider)
     }
     const LogOut = () => {
         signOut(auth).then(() => {
-            alert("logout successful")
+            toast.success("logout successful")
+
         })
     }
     useEffect(() => {
         const subscribe = onAuthStateChanged(auth, (user) => {
+            setLoading(false)
             setUser(user)
         });
         () => subscribe()
     }, [])
-    console.log(user)
+    // console.log(user)
     const info = {
         createUser,
         LogInUser,
         user, setUser,
         UpdateProfile,
         LogOut,
-        SingInWIthgoogle
+        SingInWIthgoogle,
+        loading,setLoading,
+       
     }
     return (
         <AuthContext.Provider value={info}>

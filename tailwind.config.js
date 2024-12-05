@@ -6,7 +6,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        's1': "url('/src/assets/images (16).jpg')",
+        's2': "url('/src/assets/images (7).jpg')",
+        's3': "url('/src/assets/images (11).jpg')",
+        's4': "url('/src/assets/images (12).jpg')",
+        
+      }
+    },
   },
   plugins: [daisyui],
 }

@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllSportsEquipment = () => {
     const equipments=useLoaderData()
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
-    console.log(equipments)
+    // console.log(equipments)
     return (
         <div className="overflow-x-auto  w-11/12 mx-auto mb-10">
             <div className="flex justify-center items-center text-center mt-6 mb-10">
