@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
+import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 
@@ -42,6 +43,7 @@ const UpdateData = () => {
         .then(()=>{
             // console.log(data)
             navigate("/myequipmentlist")
+            toast.success("Equipment update succefull")
         })
         .catch(()=>{
             // console.log(error)

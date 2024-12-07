@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../Provider/AuthProvider";
+// import { AuthContext } from "../Provider/AuthProvider";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -27,7 +27,7 @@ import a4 from '../assets/images (222).jpg'
 
 
 const Home = () => {
-    const equipments = useLoaderData(AuthContext)
+    const equipments = useLoaderData()
    
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     return (

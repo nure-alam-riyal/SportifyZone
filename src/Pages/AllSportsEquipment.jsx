@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AllSportsEquipment = () => {
+  const {user}=useContext(AuthContext)
     const equipments=useLoaderData()
+    console.log(user.email)
     const [equipmentM,setEquipments]=useState(equipments)
+    useEffect(()=>{
+      // setEquipments(equipments)
+    },[])
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     // console.log(equipments)
     const handleSort=()=>{
-                          const newEquipment=equipmentM?.sort((b,a) => (a?.price-b?.price))
-                     
-                          setEquipments(newEquipment)
+                           
+                  fetch(`http://localhost:4871/equipments/emails/${user.email}`)  
+                  .then(res=>res.json())
+                  .then(data=>{
+                    data.sort((a,b)=>(a.price-b.price))
+                    setEquipments(data)
+                  })
+                          
                           toast.success('sorted by price')
                          
                         

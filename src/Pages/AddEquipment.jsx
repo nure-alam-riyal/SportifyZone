@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const AddEquipment = () => {
   const {user}=useContext(AuthContext)
@@ -33,6 +34,7 @@ const AddEquipment = () => {
         body:JSON.stringify(info)
        }).then(res=>res.json()).then(()=>{
         // console.log(data)
+        toast.success('Equipment added Successful')
        })
      
     }

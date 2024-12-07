@@ -36,6 +36,8 @@ const MyEquipmentList = () => {
                 icon: "success"
               });
             //   console.log(data)
+            const newEquipment=myEquipments.filter(euip=>euip._id!=id)
+            setMyEquipments(newEquipment)
                 })
            
             }
