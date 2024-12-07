@@ -9,12 +9,14 @@ import AllSportsEquipment from "./Pages/allSportsEquipment";
 import DetailsPage from "./Pages/DetailsPage";
 import UpdateData from "./Pages/UpdateData";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ErrorPage from "./Pages/ErrorPage";
 
 
  const  router=createBrowserRouter([
     {
         path: "/",
         element: <MainLayOut></MainLayOut>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',

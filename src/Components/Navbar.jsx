@@ -3,6 +3,9 @@ import logo from '../../public/logo.jpg';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Tooltip } from "react-tooltip";
+// import 'react-tooltip/dist/react-tooltip.css'
+
 
 const Navbar = () => {
   const navigate=useNavigate()
@@ -60,7 +63,20 @@ const Navbar = () => {
   </div>
   <div className="navbar-end ">
    {
-    user?<div  className="flex gap-3"><div><img title={user.displayName} className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" /></div  ><Link className="btn bg-red-100" onClick={hadleLogout}>log Out</Link></div>
+    user?
+    <div  className="flex gap-3">
+      
+     <a data-tooltip-id="my-tooltip"
+  data-tooltip-content="Hello world!"
+  data-tooltip-place="top"> <div ><img 
+    // title={user.displayName}
+     className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" />
+     </div  ></a>
+     {/* <Tooltip anchorSelect=".my-anchor-element" place="top">
+  You can't click me :
+</Tooltip> */}
+
+     <Link className="btn bg-red-100" onClick={hadleLogout}>log Out</Link></div>
      : 
     <div className="flex gap-3">
        <Link to='/login' className="btn">Log in</Link> 
@@ -69,6 +85,7 @@ const Navbar = () => {
    }
   </div>
   </div>
+  
 </div>
     );
 };
