@@ -25,8 +25,10 @@ import a2 from '../assets/download (72).jpg'
 import a3 from '../assets/images (212).jpg'
 import a4 from '../assets/images (222).jpg'
 
+
 const Home = () => {
     const equipments = useLoaderData(AuthContext)
+   
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     return (
         <div className="w-11/12 mx-auto">
@@ -81,6 +83,13 @@ const Home = () => {
         </div>
        </div></SwiperSlide>
     </Swiper>
+    {/* <select onChange={()=>setTheme()}>
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="cupcake">Cupcake</option>
+</select> */}
+
+   
             </section>
             <section className="my-10">
                 <div> <div className="flex justify-center items-center text-center  mt-6 mb-10">

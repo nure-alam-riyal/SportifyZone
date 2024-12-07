@@ -1,9 +1,20 @@
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllSportsEquipment = () => {
     const equipments=useLoaderData()
+    const [equipmentM,setEquipments]=useState(equipments)
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     // console.log(equipments)
+    const handleSort=()=>{
+                          const newEquipment=equipmentM?.sort((b,a) => (a?.price-b?.price))
+                     
+                          setEquipments(newEquipment)
+                          toast.success('sorted by price')
+                         
+                        
+    }
     return (
         <div className="overflow-x-auto  w-11/12 mx-auto mb-10">
             <div className="flex justify-center items-center text-center mt-6 mb-10">
@@ -14,6 +25,17 @@ const AllSportsEquipment = () => {
             </div>
   <table className="table text-center w-full">
     {/* head */}
+    <thead>
+    <tr >
+        <th></th>
+        <th></th>
+        <th></th>
+        <th onClick={handleSort} className="btn bg-yellow-100 my-3 font-bold text-2xl">Sort By Price</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+   
     <thead className="bg-blue-300 font-bold font-rancho text-black text-xl">
       <tr >
         <th>NO</th>
@@ -25,7 +47,7 @@ const AllSportsEquipment = () => {
       </tr>
     </thead>
     <tbody>
-      {equipments?.map((equipment,index)=>
+      {equipmentM?.map((equipment,index)=>
     <tr key={equipment._id}>
         <td>{index+1}</td>
         <td>{equipment?.itemName}</td>
