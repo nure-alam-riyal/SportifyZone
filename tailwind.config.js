@@ -20,6 +20,7 @@ export default {
         's2': "url('/src/assets/images (7).jpg')",
         's3': "url('/src/assets/images (11).jpg')",
         's4': "url('/src/assets/images (12).jpg')",
+        'sce3':"url('/src/assets/pexels-pixabay-358042.jpg')"
         
       }
     },

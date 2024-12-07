@@ -11,6 +11,9 @@ const Footer = () => {
           </p>
           {/* <p>Copyright © {new Date().getFullYear()} - All right reserved</p> */}
         </aside>
+        <div>
+          
+        </div>
         <nav>
           <div className="grid grid-flow-col gap-4">
             <a>
