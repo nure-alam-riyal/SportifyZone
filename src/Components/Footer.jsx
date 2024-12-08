@@ -11,8 +11,11 @@ const Footer = () => {
           </p>
           {/* <p>Copyright © {new Date().getFullYear()} - All right reserved</p> */}
         </aside>
-        <div>
-          
+        <div className='font-semibold text-2xl'>
+          <div>Contact Us</div>
+          <div>About Us</div>
+          <div>FAX : +1-555-482-7391</div>
+          <div>Email: SportifyZone@bussiness.com </div>
         </div>
         <nav>
           <div className="grid grid-flow-col gap-4">

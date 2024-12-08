@@ -9,7 +9,7 @@ const MyEquipmentList = () => {
     const {user}=useContext(AuthContext)
     const [myEquipments,setMyEquipments]=useState([])
     useEffect(()=>{
-   fetch(`http://localhost:4871/equipments/email/${user.email}`).then(res=>res.json()).then(data=>{
+   fetch(`https://sports-equipments-server-side.vercel.app/equipments/email/${user.email}`).then(res=>res.json()).then(data=>{
     setMyEquipments(data)
    })
     },[user.email])
@@ -25,7 +25,7 @@ const MyEquipmentList = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4871/equipments/${id}`,{
+                fetch(`https://sports-equipments-server-side.vercel.app/equipments/${id}`,{
                     method:"DELETE"
                 })
                 .then(res=>res.json())

@@ -21,7 +21,7 @@ import ErrorPage from "./Pages/ErrorPage";
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch("http://localhost:4871/equipments")
+                loader:()=>fetch("https://sports-equipments-server-side.vercel.app/equipments")
             },{
                 path:'/login',
                 element:<LogIn></LogIn>
@@ -38,16 +38,16 @@ import ErrorPage from "./Pages/ErrorPage";
             },{
                 path:"/allsports",
                 element:<PrivateRoute><AllSportsEquipment></AllSportsEquipment></PrivateRoute>,
-                loader:()=>fetch("http://localhost:4871/equipments")
+                loader:()=>fetch("https://sports-equipments-server-side.vercel.app/equipments")
             },{
                 path:"details/:id",
                 element:<PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>,
-                loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
+                loader:async({params})=>fetch(`https://sports-equipments-server-side.vercel.app/equipments/${params.id}`)
                 
             },{
                 path:'/update/:id',
                 element:<PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
-                loader:async({params})=>fetch(`http://localhost:4871/equipments/${params.id}`)
+                loader:async({params})=>fetch(`https://sports-equipments-server-side.vercel.app/equipments/${params.id}`)
 
             }
         ]

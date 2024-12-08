@@ -6,7 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const AllSportsEquipment = () => {
   const {user}=useContext(AuthContext)
     const equipments=useLoaderData()
-    console.log(user.email)
+    // console.log(user.email)
     const [equipmentM,setEquipments]=useState(equipments)
     useEffect(()=>{
       // setEquipments(equipments)
@@ -15,7 +15,7 @@ const AllSportsEquipment = () => {
     // console.log(equipments)
     const handleSort=()=>{
                            
-                  fetch(`http://localhost:4871/equipments/emails/${user.email}`)  
+                  fetch(`https://sports-equipments-server-side.vercel.app/equipments/emails/${user.email}`)  
                   .then(res=>res.json())
                   .then(data=>{
                     data.sort((a,b)=>(a.price-b.price))

@@ -3,7 +3,7 @@ import logo from '../../public/logo.jpg';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 
 
 
@@ -67,7 +67,7 @@ const Navbar = () => {
     <div  className="flex gap-3">
       
       <div id='riyal' ><img 
-    // title={user.displayName}
+    title={user.displayName}
      className="w-12 h-12 rounded-full" src={user.photoURL} alt="userPhoto" />
      </div  >
      {/* <Tooltip id="riyal" anchorSelect=".my-anchor-element" place="top">
