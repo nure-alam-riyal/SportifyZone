@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { Roll } from "react-awesome-reveal";
 
 
 const MyEquipmentList = () => {
@@ -48,8 +49,10 @@ const MyEquipmentList = () => {
             <div>
                   <div className="flex justify-center items-center text-center mt-6 mb-10">
                 <div className="md:w-2/3">
-                    <h2 className="font-bold text-3xl">My Added Product</h2>
-                    <p>Encompasses a wide range of gear and tools designed for various sports activities, including balls, bats, rackets, protective gear, and training accessories, catering to athletes of all skill levels.</p>
+                  <Roll>
+                  <h2 className="font-bold text-3xl">My Added Product</h2>
+                  <p>Encompasses a wide range of gear and tools designed for various sports activities, including balls, bats, rackets, protective gear, and training accessories, catering to athletes of all skill levels.</p>
+                  </Roll>
                 </div>
             </div>
             </div>

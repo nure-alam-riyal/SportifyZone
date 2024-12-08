@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Roll} from "react-awesome-reveal";
 
 const AllSportsEquipment = () => {
   const {user}=useContext(AuthContext)
@@ -30,9 +31,11 @@ const AllSportsEquipment = () => {
         <div className="overflow-x-auto  w-11/12 mx-auto mb-10">
             <div className="flex justify-center items-center text-center mt-6 mb-10">
                 <div className="md:w-2/3">
-                    <h2 className="font-bold text-3xl font-rancho">All Sports Equipments</h2>
+                  <Roll>
+                  <h2 className="font-bold text-3xl font-rancho">All Sports Equipments</h2>
                     <p>Encompasses a wide range of gear and tools designed for various sports activities, including balls, bats, rackets, protective gear, and training accessories, catering to athletes of all skill levels.</p>
-                </div>
+               </Roll> 
+               </div>
             </div>
   <table className="table text-center w-full">
     {/* head */}
@@ -48,7 +51,8 @@ const AllSportsEquipment = () => {
     </thead>
    
     <thead className="bg-blue-300 font-bold font-rancho text-black text-xl">
-      <tr >
+    
+     <tr >
         <th>NO</th>
         <th>Item Name</th>
         <th>Category Name</th>
@@ -56,17 +60,23 @@ const AllSportsEquipment = () => {
         <th>Stock Status</th>
         <th>Action</th>
       </tr>
+     
     </thead>
     <tbody>
       {equipmentM?.map((equipment,index)=>
-    <tr key={equipment._id}>
+
+    
+      <tr key={equipment._id}>
+        
         <td>{index+1}</td>
         <td>{equipment?.itemName}</td>
         <td>{equipment?.categoryName}</td>
         <td>{equipment?.price}</td>
         <td>{equipment?.status}</td>
         <td><Link className="btn" to={`/details/${equipment?._id}`}>View Details</Link></td>
+        
       </tr>
+   
     )}
       
      

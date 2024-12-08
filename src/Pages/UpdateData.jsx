@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Roll } from "react-awesome-reveal";
 import DatePicker from "react-datepicker";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -53,10 +54,12 @@ const UpdateData = () => {
         <div className="hero bg-slate-50 py-10 ">
   <div className="hero-content flex-col ">
     <div className=" text-center">
+      <Roll>
       <h1 className="text-5xl font-bold">Update  Equipment</h1>
       <p className="py-6">
       Incorporating additional sports tools, gear, or apparatus to enhance performance, improve training, or cater to specific athletic needs.
       </p>
+      </Roll>
     </div>
     <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl">
       <form onSubmit={updateData} className="card-body space-y-5">
