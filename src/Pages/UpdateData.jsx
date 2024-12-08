@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Roll } from "react-awesome-reveal";
+import {  Slide } from "react-awesome-reveal";
 import DatePicker from "react-datepicker";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -54,12 +54,12 @@ const UpdateData = () => {
         <div className="hero bg-slate-50 py-10 ">
   <div className="hero-content flex-col ">
     <div className=" text-center">
-      <Roll>
+      <Slide>
       <h1 className="text-5xl font-bold">Update  Equipment</h1>
       <p className="py-6">
       Incorporating additional sports tools, gear, or apparatus to enhance performance, improve training, or cater to specific athletic needs.
       </p>
-      </Roll>
+      </Slide>
     </div>
     <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl">
       <form onSubmit={updateData} className="card-body space-y-5">
@@ -123,7 +123,7 @@ const UpdateData = () => {
          
         </div>
         </div>
-        <div className="lg:flex gap-4">
+        <di className="lg:flex gap-4">
         <div className="form-control w-full lg:w-1/2">
           <label className="label">
             <span className="label-text">Stock Status (available product quantity), </span>
@@ -136,8 +136,8 @@ const UpdateData = () => {
           </label>
           <DatePicker  className="border w-full p-3 rounded-lg" dateFormat="dd-MM-yyyy"  selected={startDate} onChange={(date) => setStartDate(date)} />
          
-        </div>
-        </div>{'dd/mm/yyyy'}
+        </div></di>
+        
         <div className="lg:flex gap-4">
         <div className="form-control w-full ">
           <label className="label">

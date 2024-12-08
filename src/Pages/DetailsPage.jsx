@@ -1,4 +1,4 @@
-import { Roll } from "react-awesome-reveal";
+import {  Slide } from "react-awesome-reveal";
 import { useLoaderData } from "react-router-dom";
 const DetailsPage = () => {
     const equipment=useLoaderData()
@@ -7,7 +7,7 @@ const DetailsPage = () => {
 
     return (
         <div className="max-w-lg my-10 mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            <Roll><div className="">
+            <Slide><div className="">
                 <div className="flex justify-center">
                     <img
                         src={image}
@@ -34,8 +34,8 @@ const DetailsPage = () => {
                     <p className="text-gray-600">
                         <strong>Delivery Time:</strong> {dtime}
                     </p>
-                    <p className="text-gray-600">
-                        <strong>Rating:</strong> {rating} 
+                    <p className="text-gray-600 flex">
+                        <strong>Rating:</strong> <p>{rating} </p>
                     </p>
                     </div>
                     <p className="text-gray-600 px-10">
@@ -52,7 +52,7 @@ const DetailsPage = () => {
                    
                     
                 </div>
-            </div></Roll>
+            </div></Slide>
         </div>
     );
 };

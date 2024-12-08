@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Roll} from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
+
 
 const AllSportsEquipment = () => {
   const {user}=useContext(AuthContext)
@@ -31,10 +32,10 @@ const AllSportsEquipment = () => {
         <div className="overflow-x-auto  w-11/12 mx-auto mb-10">
             <div className="flex justify-center items-center text-center mt-6 mb-10">
                 <div className="md:w-2/3">
-                  <Roll>
+                 <Slide>
                   <h2 className="font-bold text-3xl font-rancho">All Sports Equipments</h2>
                     <p>Encompasses a wide range of gear and tools designed for various sports activities, including balls, bats, rackets, protective gear, and training accessories, catering to athletes of all skill levels.</p>
-               </Roll> 
+                    </Slide>
                </div>
             </div>
   <table className="table text-center w-full">

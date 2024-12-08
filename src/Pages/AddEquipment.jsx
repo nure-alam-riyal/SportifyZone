@@ -4,11 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
-import { Roll } from "react-awesome-reveal";
+import {  Slide } from "react-awesome-reveal";
 
 const AddEquipment = () => {
   const {user}=useContext(AuthContext)
-    const [startDate, setStartDate] = useState(new Date().toLocaleDateString());
+    const [startDate, setStartDate] = useState(new Date());
     const handleData=(e)=>{
         e.preventDefault()
        const  form=e.target 
@@ -43,12 +43,12 @@ const AddEquipment = () => {
         <div className="hero bg-base-200 py-10">
   <div className="hero-content flex-col ">
     <div className=" text-center">
-      <Roll>
+      <Slide>
       <h1 className="text-5xl font-rancho font-bold">Add Equipment</h1>
       <p className="py-6">
       Incorporating additional sports tools, gear, or apparatus to enhance performance, improve training, or cater to specific athletic needs.
       </p>
-      </Roll>
+      </Slide>
     </div>
     <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl">
       <form onSubmit={handleData} className="card-body space-y-5">
