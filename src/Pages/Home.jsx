@@ -29,11 +29,17 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { FaGoodreads, FaSellcast } from "react-icons/fa";
 import { Rotate, Slide } from "react-awesome-reveal";
 import Offeredsection from "../Components/Offeredsection";
+import Benefits from "../Components/Benefits";
+import toast from "react-hot-toast";
 
 
 const Home = () => {
     const equipments = useLoaderData()
-
+const handleSubscribe=(e)=>{
+    e.preventDefault()
+    toast.success('thanks for your comment')
+    e.target.reset()
+}
     // const {   itemName,image,email,categoryName,userName,description,status,price,customization,rating,dtime}=equipments
     return (
         <div className="w-11/12 mx-auto">
@@ -237,6 +243,7 @@ const Home = () => {
                 </div>
 
             </section>
+            <Benefits></Benefits>
             <section className="my-10">
                 <div> <div className="flex justify-center items-center text-center  my-10">
                     <div className="md:w-2/3">
@@ -280,11 +287,13 @@ const Home = () => {
                     </div>
                 </div>
                 </div>
+                <form onSubmit={handleSubscribe} action="">
                 <div className="w-11/12 md:w-2/3 lg:w-1/2 pb-10 mx-auto">
-                    <div><input className="border w-full p-4 my-2 rounded-lg" type="email" name="" id="" placeholder="Enter your Email" /></div>
-                    <div><textarea className="border w-full p-4 rounded-lg" name="" id="" cols="5" placeholder="Your Comments" rows="5"></textarea></div>
+                    <div><input className="border w-full p-4 my-2 rounded-lg" required type="email" name="" id="" placeholder="Enter your Email" /></div>
+                    <div><textarea className="border w-full p-4 rounded-lg" required name="" id="" cols="5" placeholder="Your Comments" rows="5"></textarea></div>
                 </div>
-                <div className="text-center pb-5"><button className="btn bg-blue-400">Subscibe</button></div>
+                <div className="text-center pb-5"><button className="btn bg-blue-200">Subscibe</button></div>
+                </form>
 
             </section>
         </div>
