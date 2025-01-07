@@ -67,9 +67,9 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                 <li><NavLink to="/" className='                hover:text-red-300 text-lg font-medium'>Home</NavLink></li>
-                <li><NavLink to="/allsports" className='       hover:text-red-300 text-lg font-medium'>All  Equipment</NavLink></li>
-                <li><NavLink to="/addequipment" className='    hover:text-red-300 text-lg font-medium'>{user ?'Add  Equipment':''}</NavLink></li>
-                <li><NavLink to="/myequipmentlist" className=' hover:text-red-300 text-lg font-medium'>{user ?'My Equipment List':''}</NavLink></li>
+                <li><NavLink to="/allsports" className='       hover:text-red-300 text-lg font-medium'>All Equipment</NavLink></li>
+                <li><NavLink to="/addequipment" className='    hover:text-red-300 text-lg font-medium'>{user ?'Add Equipment':''}</NavLink></li>
+                <li><NavLink to="/myequipmentlist" className=' hover:text-red-300 text-lg font-medium'>{user ?'My Equipment':''}</NavLink></li>
                 <li><NavLink to="/contactus" className='       hover:text-red-300 text-lg font-medium'>Contact</NavLink></li>
                 <li><NavLink to="/aboutus" className='       hover:text-red-300 text-lg font-medium'>About</NavLink></li>
                 <li><NavLink to="/login" className='           hover:text-red-300 text-lg font-medium'>{!user&&'Login'}</NavLink></li>
@@ -85,13 +85,13 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex flex-wrap">
             <ul className="menu menu-horizontal px-1">
               
-                <li><NavLink to="/" className='                hover:text-red-300 text-lg font-medium'>Home</NavLink></li>
-                <li><NavLink to="/allsports" className='       hover:text-red-300 text-lg font-medium'>All  Equipment</NavLink></li>
-                <li><NavLink to="/addequipment" className='    hover:text-red-300 text-lg font-medium'>{user ?'Add  Equipment':''}</NavLink></li>
-                <li><NavLink to="/myequipmentlist" className=' hover:text-red-300 text-lg font-medium'>{user ?'My Equipment List':''}</NavLink></li>
-                <li><NavLink to="/contactus" className='       hover:text-red-300 text-lg font-medium'>Contact</NavLink></li>
-                <li><NavLink to="/aboutus" className='       hover:text-red-300 text-lg font-medium'>About</NavLink></li>
-                <li><NavLink to="/login" className='           hover:text-red-300 text-lg font-medium'>{!user&&'Login'}</NavLink></li>
+                <li><NavLink to="/" className='                                                  hover:text-red-300 font-medium'>Home</NavLink></li>
+                <li><NavLink to="/allsports" className='                                         hover:text-red-300 font-medium'>All Equipment</NavLink></li>
+                <li className={`${user?'':'hidden'}`}><NavLink to="/addequipment" className='    hover:text-red-300 font-medium'>{user ?'Add Equipment':''}</NavLink></li>
+                <li className={`${user?'':'hidden'}`}><NavLink to="/myequipmentlist" className=' hover:text-red-300 font-medium'>{user ?'My Equipment':''}</NavLink></li>
+                <li><NavLink to="/contactus" className='                                         hover:text-red-300 font-medium'>Contact</NavLink></li>
+                <li><NavLink to="/aboutus" className='                                           hover:text-red-300 font-medium'>About</NavLink></li>
+                <li className={`${user?'hidden':'flex'}`}><NavLink to="/login" className='       hover:text-red-300 font-medium'>{!user&&'Login'}</NavLink></li>
             </ul>
           </div>
           <div className="navbar-end ">
