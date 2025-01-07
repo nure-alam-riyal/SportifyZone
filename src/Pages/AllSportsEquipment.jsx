@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../Provider/AuthProvider";
+// import { AuthContext } from "../Provider/AuthProvider";
 import { Slide } from "react-awesome-reveal";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 
 const AllSportsEquipment = () => {
-  const {user}=useContext(AuthContext)
+  // const {user}=useContext(AuthContext)
     const equipments=useLoaderData()
     // console.log(user.email)
     const [equipmentM,setEquipments]=useState(equipments)
@@ -17,19 +18,21 @@ const AllSportsEquipment = () => {
     // console.log(equipments)
     const handleSort=()=>{
                            
-                  fetch(`https://sports-equipments-server-side.vercel.app/equipments/emails/${user.email}`)  
+                  fetch(`https://sports-equipments-server-side.vercel.app/equipments`)  
                   .then(res=>res.json())
                   .then(data=>{
                     data.sort((a,b)=>(a.price-b.price))
                     setEquipments(data)
+                    toast.success('sorted by price')
                   })
                           
-                          toast.success('sorted by price')
+                         
                          
                         
     }
+    console.log(equipmentM)
     return (
-        <div className="overflow-x-auto  w-11/12 mx-auto mb-10">
+        <div className="overflow-x-auto w-11/12 mx-auto mb-10">
             <div className="flex justify-center items-center text-center mt-6 mb-10">
                 <div className="md:w-2/3">
                  <Slide>
@@ -38,51 +41,61 @@ const AllSportsEquipment = () => {
                     </Slide>
                </div>
             </div>
-  <table className="table text-center w-full">
-    {/* head */}
-    <thead>
-    <tr >
-        <th></th>
-        <th></th>
-        <th></th>
-        <th onClick={handleSort} className="btn bg-yellow-100 my-3 font-bold text-2xl">Sort By Price</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+  
+        <div onClick={handleSort} className="btn bg-yellow-100 my-3 font-bold text-2xl">Sort By Price</div>
+        
    
-    <thead className="bg-blue-300 font-bold font-rancho text-black text-xl">
     
-     <tr >
-        <th>NO</th>
-        <th>Item Name</th>
-        <th>Category Name</th>
-        <th>Price</th>
-        <th>Stock Status</th>
-        <th>Action</th>
-      </tr>
-     
-    </thead>
-    <tbody>
-      {equipmentM?.map((equipment,index)=>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {
+                        equipmentM?.map(equipemt => <div key={equipemt._id}>
+                            <Link to={`/details/${equipemt._id}`}>
+                                <div className="card bg-base-100 hover:scale-110  shadow-xl">
+                                    <figure className="p-6">
+                                        <img className="rounded-lg h-[150px]"
+                                            src={equipemt.image}
+                                            alt="Shoes" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">
+                                            {equipemt.itemName}
 
-    
-      <tr key={equipment._id}>
-        
-        <td>{index+1}</td>
-        <td>{equipment?.itemName}</td>
-        <td>{equipment?.categoryName}</td>
-        <td>{equipment?.price}</td>
-        <td>{equipment?.status}</td>
-        <td><Link className="btn" to={`/details/${equipment?._id}`}>View Details</Link></td>
-        
-      </tr>
-   
-    )}
-      
-     
-    </tbody>
-  </table>
+                                        </h2>
+                                        <div className="flex justify-center flex-col">
+                                            <div className="flex  font-semibold gap-2 justify-center"> <p>{equipemt.categoryName}</p></div>
+
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <div className="flex  font-semibold gap-2"><p className="flex gap-1 items-center">{equipemt.price} <FaBangladeshiTakaSign></FaBangladeshiTakaSign></p></div>
+                                            <div className="flex  font-semibold items-center gap-2">
+                                                <div  className="rating rating-sm">
+                                                    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                                                    <input
+                                                        type="radio"
+                                                        name="rating-6"
+                                                        className="mask mask-star-2 bg-orange-400"
+                                                        defaultChecked={equipemt.rating} />
+                                                    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                                                </div>
+                                                <p>({equipemt.rating})</p></div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+
+
+
+                        )
+                    }
+                </div>
+  
 </div>
     );
 };

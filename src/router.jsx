@@ -10,6 +10,8 @@ import DetailsPage from "./Pages/DetailsPage";
 import UpdateData from "./Pages/UpdateData";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ErrorPage from "./Pages/ErrorPage";
+import ContactUs from "./Pages/ContactuUs";
+import AboutUs from "./Pages/AboutUs";
 
 
  const  router=createBrowserRouter([
@@ -37,7 +39,7 @@ import ErrorPage from "./Pages/ErrorPage";
                 element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
             },{
                 path:"/allsports",
-                element:<PrivateRoute><AllSportsEquipment></AllSportsEquipment></PrivateRoute>,
+                element:<AllSportsEquipment></AllSportsEquipment>,
                 loader:()=>fetch("https://sports-equipments-server-side.vercel.app/equipments")
             },{
                 path:"details/:id",
@@ -49,7 +51,14 @@ import ErrorPage from "./Pages/ErrorPage";
                 element:<PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
                 loader:async({params})=>fetch(`https://sports-equipments-server-side.vercel.app/equipments/${params.id}`)
 
-            }
+            },{
+                path:'contactus',
+                element:<ContactUs></ContactUs>
+        },
+        {
+            path:'/aboutus',
+            element:<AboutUs></AboutUs>
+        }
         ]
 
       },

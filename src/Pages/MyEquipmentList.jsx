@@ -59,7 +59,7 @@ const MyEquipmentList = () => {
            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {
                  myEquipments.map(equipemt => <div key={equipemt._id}>
-                    <div className="card bg-base-100  shadow-xl">
+                    <div className="card bg-base-100 hover:scale-110 shadow-xl">
                         <figure>
                             <img
                                 src={equipemt.image}
@@ -71,12 +71,12 @@ const MyEquipmentList = () => {
 
                             </h2>
                             <div className="flex justify-center flex-col">
-                                <div className="flex text-black font-semibold gap-2"><p className="opacity-70">Category Name :  </p> <p>{equipemt.categoryName}</p></div>
-                                <div className="flex text-black font-semibold gap-2"><p className="opacity-70">Stack Status :  </p> <p>{equipemt.status}</p></div>
+                                <div className="flex  font-semibold gap-2"><p className="opacity-70">Category Name : </p> <p>{equipemt.categoryName}</p></div>
+                                <div className="flex  font-semibold gap-2"><p className="opacity-70">Stack Status :  </p> <p>{equipemt.status}</p></div>
                             </div>
                             <div className="flex justify-between">
-                                <div className="flex text-black font-semibold gap-2"><p className="opacity-70">Price :  </p> <p className="flex gap-1 items-center">{equipemt.price} <FaBangladeshiTakaSign></FaBangladeshiTakaSign></p></div>
-                                <div className="flex text-black font-semibold gap-2"><p className="opacity-70">Rating :  </p> <p>{equipemt.rating}</p></div>
+                                <div className="flex  font-semibold gap-2"><p className="opacity-70">Price :  </p> <p className="flex gap-1 items-center">{equipemt.price} <FaBangladeshiTakaSign></FaBangladeshiTakaSign></p></div>
+                                <div className="flex  font-semibold gap-2"><p className="opacity-70">Rating :  </p> <p>{equipemt.rating}</p></div>
                             </div>
                             <div className="card-actions flex-nowrap justify-center my-2">
                               <Link className=" btn rounded-lg w-1/3 bg-blue-100"  to={`/update/${equipemt._id}`}>Update</Link>

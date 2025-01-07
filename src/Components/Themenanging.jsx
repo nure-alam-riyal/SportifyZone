@@ -15,7 +15,7 @@ const Themenanging = () => {
 
 {
     themes ? <div  onClick={()=>setThemes(false)} className="flex font-bold gap-2 items-center">
-    <p> Dark</p> 
+   
   <svg 
  
     className="swap-on h-10 w-10 fill-current"
@@ -29,7 +29,7 @@ const Themenanging = () => {
  :
 <div onClick={()=>setThemes(true)} className="flex font-bold gap-2 items-center">
       
-<p>Light </p>
+
  <svg
  
    className="swap-off h-10 w-10 fill-current"

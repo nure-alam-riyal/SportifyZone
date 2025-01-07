@@ -3,7 +3,8 @@ import  { AuthContext } from "../Provider/AuthProvider";
 import google from '../assets/google logo.avif'
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import img from '../assets/Sign up.gif'
 
 const Register = () => {
   const [eye, setEye] = useState(true)
@@ -78,8 +79,11 @@ const Register = () => {
      }
     // console.log(createUser)
     return (
-        <div className="hero bg-base-200 min-h-screen py-5">
-        <div className="flex flex-col w-11/12 md:w-9/12  lg:w-2/5 mx-auto ">
+       <div className="hero lg:flex justify-center items-center gap-10 bg-base-200 min-h-screen">
+                 <div >
+                   <img  className="rounded-2xl mx-auto  w-[380px] md:w-full md:m-10  opacity-10 scale-110 md:scale-100 lg:opacity-100 " src={img} alt="" />
+                 </div>
+               <div className="flex flex-col p-5 max-w-xl w-11/12 lg:w-8/12 ">
           <div className="text-center ">
             <h1 className="text-5xl font-bold my-4">Registration Now!</h1>
           </div>
@@ -123,6 +127,7 @@ const Register = () => {
             <div onClick={  handleGoogleLogin} className="flex justify-center w-11/12 md:w-2/3 lg:w-1/2 mx-auto bg-slate-50 gap-3 my-3 items-center btn">
              <img className="w-10 h-10 rounded-full" src={google} alt="google" /> <p>Login With Google</p>
             </div>
+            <p className="m-3 text-center">Are you Already here? Please <Link className="text-red-400" to={'/login'}>LogIn</Link></p>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../public/logo.jpg'
 const Footer = () => {
     return (
@@ -12,10 +13,10 @@ const Footer = () => {
           {/* <p>Copyright © {new Date().getFullYear()} - All right reserved</p> */}
         </aside>
         <div className='font-semibold text-2xl'>
-          <div>Contact Us</div>
-          <div>About Us</div>
-          <div>FAX : +1-555-482-7391</div>
-          <div>Email: SportifyZone@bussiness.com </div>
+          <Link to='/contactus'><div>Contact Us</div></Link>
+          <Link to='/aboutus'><div>About Us</div></Link>
+          <div>Phone : 01617640464</div>
+          <div>Email: nurealamriyal@gmail.com </div>
         </div>
         <nav>
           <div className="grid grid-flow-col gap-4">

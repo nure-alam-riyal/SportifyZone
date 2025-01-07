@@ -1,11 +1,13 @@
-
+import { Link } from 'react-router-dom';
+import error from '../assets/404 error with portals.gif'
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const ErrorPage = () => {
     return (
-        <div className="flex justify-center items-center h-[500px]">
-            <div className="w-11/12 text-center">
-                <h1 className="text-4xl font-semibold font-rancho">4<span className="text-red-300">0</span>4</h1>
-                <p className="text-5xl font-bold">Page N<span className="text-red-300">O</span>t Found</p>
+        <div className="flex justify-center flex-col items-center h-screen">
+            <h1 className='text-center '><Link  className='btn bg-green-300 text-3xl ' to={'/'}><FaArrowAltCircleLeft></FaArrowAltCircleLeft>Back To Home page</Link></h1>
+            <div className="w-11/12  flex justify-center text-center">
+                <img src={error} alt="" />
             </div>
         </div>
     );
