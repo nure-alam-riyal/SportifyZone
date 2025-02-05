@@ -6,6 +6,26 @@
 SportifyZone is a **sports equipment management web application** that allows users to efficiently manage sports gear. It provides a user-friendly interface to **add, update, and delete equipment** while ensuring security through **Firebase authentication**. The application is **fully responsive**, making it accessible across different devices.
 
 ---
+## 🛠️ Usage
+
+### 🔹 Add Equipment
+1. Navigate to the dashboard.
+2. Click on **"Add Equipment"**.
+3. Fill in the required details and submit.
+
+### 🔹 Update Equipment
+1. Select an item from the inventory.
+2. Click **"Edit"**, make changes, and save.
+
+### 🔹 Delete Equipment
+1. Click the **"Delete"** button on an item.
+2. Confirm the action in the popup.
+
+### 🔹 Authentication
+- Users must **Sign Up / Log In** to manage equipment.
+- Firebase handles **secure authentication**.
+
+---
 
 ## 📖 Table of Contents
 
@@ -77,26 +97,7 @@ npm run dev
 
 ---
 
-## 🛠️ Usage
 
-### 🔹 Add Equipment
-1. Navigate to the dashboard.
-2. Click on **"Add Equipment"**.
-3. Fill in the required details and submit.
-
-### 🔹 Update Equipment
-1. Select an item from the inventory.
-2. Click **"Edit"**, make changes, and save.
-
-### 🔹 Delete Equipment
-1. Click the **"Delete"** button on an item.
-2. Confirm the action in the popup.
-
-### 🔹 Authentication
-- Users must **Sign Up / Log In** to manage equipment.
-- Firebase handles **secure authentication**.
-
----
 
 ## ⚙️ Configuration
 
